@@ -1,0 +1,67 @@
+//vars
+$include-default: false;
+$base-color: #526783;
+$font-family: 'Droid Sans', tahoma, arial, verdana, sans-serif;
+
+$border-layout-ct-background: #556170;
+
+$panel-border-color: #2e3e4f;
+
+$button-default-base-color: #efefef;
+$button-default-background-gradient: color-stops(#f7f7f7, #c9c9c9);
+$button-default-background-gradient-over: color-stops(darken(#f7f7f7, 5%), darken(#c9c9c9, 5%));
+$button-default-border-color: #2e3e4f;
+$button-default-color: #555555;
+$button-small-border-radius: 4px;
+$button-small-padding: 4px 8px;
+$button-small-font-weight: bold;
+$button-small-font-size: 12px;
+$button-default-base-color-disabled: $button-default-base-color;
+$button-default-border-color-disabled: $button-default-border-color;
+$button-default-background-gradient-disabled: $button-default-background-gradient;
+$button-default-color-disabled: $button-default-color;
+
+$button-default-base-color-over: $button-default-base-color;
+$button-default-border-color-over: $button-default-border-color;
+
+$toolbar-background-gradient: color-stops(#eaeaea, #c1c1c1);
+
+//extjs themeing
+@import 'ext4/default/all';
+// @include extjs-boundlist;
+@include extjs-button;
+// @include extjs-btn-group;
+// @include extjs-datepicker;
+// @include extjs-colorpicker;
+// @include extjs-menu;
+@include extjs-grid;
+// @include extjs-form;
+// @include extjs-form-field;
+// @include extjs-form-fieldset;
+// @include extjs-form-file;
+// @include extjs-form-checkboxfield;
+// @include extjs-form-checkboxgroup;
+// @include extjs-form-triggerfield;
+// @include extjs-form-htmleditor;
+@include extjs-panel;
+// @include extjs-qtip;
+// @include extjs-slider;
+// @include extjs-progress;
+@include extjs-toolbar;
+// @include extjs-window;
+// @include extjs-messagebox;
+// @include extjs-tabbar;
+// @include extjs-tab;
+@include extjs-tree;
+// @include extjs-drawcomponent;
+@include extjs-viewport;
+
+$relative-image-path-for-uis: true;
+
+//app theming
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
+@import 'misc/global';
+@import 'misc/icons';
+@import 'view/mediaservers';
+@import 'view/mediaexplorer';
+@import 'view/viewport';

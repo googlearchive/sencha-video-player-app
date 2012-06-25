@@ -1,0 +1,75 @@
+@import "compass/css3";
+@import "compass/reset";
+
+html, body {
+	overflow: hidden;
+	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica-Neue, Helvetica, 'BBAlpha Sans', sans-serif;
+}
+iframe {
+	background: #FFF;
+	min-width: 100%;
+	min-height: 100%;
+}
+
+#player-ct {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    background: #333;
+    -webkit-transition: all 1s;
+    -webkit-transform: translateY(100%);
+    @include display-box;
+    @include box-orient(vertical);
+    @include box-align(stretch);
+    
+    .toolbar {
+        height: auto;
+        padding: 5px 10px;
+        border-bottom: 1px solid #000;
+        @include background-image(linear-gradient(#333, #222));
+    }
+    
+    #video-body, #audio-body {
+        @include box-flex(1);
+        @include box-orient(vertical);
+        @include display-box;
+        @include box-align(center);
+        @include box-pack(center);
+    }
+    video, audio {
+        @include box-flex(1);
+        min-width: 100%;
+    }
+}
+
+#close-player-btn, #save-player-btn {
+    @include border-radius(3px);
+    border: 1px solid #31435B;
+    color: #FFF;
+    padding: 7px 10px;
+    font-size: 13px;
+    font-weight: bold;
+    position: relative;
+    &:hover:before, &:active:before {
+        content: "";
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(#FFF, .1);
+    }
+    &:active:before {
+        background: rgba(#000, .2);
+    }
+}
+#close-player-btn {
+    @include background-image(linear-gradient(top, #839BBC, #6280AA 3%, #4C678C));
+}
+#save-player-btn {
+    display: none;
+    @include background-image(linear-gradient(top, #839BBC, #6280AA 3%, #4C678C));
+}

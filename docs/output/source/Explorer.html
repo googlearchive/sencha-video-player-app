@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>The source code</title>
+  <link href="../resources/prettify/prettify.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="../resources/prettify/prettify.js"></script>
+  <style type="text/css">
+    .highlight { display: block; background-color: #ddd; }
+  </style>
+  <script type="text/javascript">
+    function highlight() {
+      document.getElementById(location.hash.replace(/#/, "")).className = "highlight";
+    }
+  </script>
+</head>
+<body onload="prettyPrint(); highlight();">
+  <pre class="prettyprint lang-js">Ext.define('VP.view.media.Explorer',{
+    extend: 'Ext.Panel',
+    xtype: 'mediaexplorer',
+    cls: 'vp-mediaexplorer',
+    layout: 'fit',
+    border: false,
+    isRemote: false,
+    items: {
+        xtype: 'dataview',
+        store: 'MediaExplorer',
+        emptyText: '&lt;div class=&quot;empty-media-folder&quot;&gt;No media files found.&lt;/div&gt;',
+        autoScroll: true,
+        simpleSelect: true,
+        itemTpl: Ext.create('Ext.XTemplate', '{[this.getTemplate(values)]}', {
+            getTemplate: function(values) {
+                var output          = [],
+                    downloadStatus  = values.downloadStatus,
+                    metaData        = values.metaData||{},
+                    type            = values.type,
+                    i               = values.url.lastIndexOf('.'),
+                    extension       = i != -1 ? values.url.substring(i+1) : '',
+                    duration        = metaData.duration||'-';
+                    size            = metaData.size ? Ext.util.Format.fileSize(metaData.size) : '-';
+
+                //download icon    
+                output.push('&lt;a class=&quot;col checkbox ' + downloadStatus + '&quot;&gt;&lt;/a&gt;');
+                
+                //artwork
+                output.push('&lt;div class=&quot;col artwork ' + type + '&quot; ');
+
+                if (metaData.artwork) {
+                    output.push('style=&quot;background-image:url(\''+ metaData.artwork +'\');&quot; ');
+                }
+                
+                output.push('&gt;&lt;/div&gt;');
+                
+                //name and extension
+                output.push('&lt;div class=&quot;header&quot; title=&quot;'+values.name+'&quot;&gt;&lt;h3&gt;'+ values.name +'&lt;/h3&gt;');
+                
+                if (extension) {
+                    output.push('&lt;h4&gt;'+extension.toUpperCase()+'&lt;/h4&gt;');
+                }
+                
+                output.push('&lt;/div&gt;');
+            
+                //duration
+                if (duration.length === 8 &amp;&amp; duration.substr(0,3) === '00:') {
+                    duration = duration.substr(3,5);
+                }
+                
+                output.push('&lt;div class=&quot;col info&quot;&gt;'+ duration +'&lt;/div&gt;');
+                
+                //size
+                output.push('&lt;div class=&quot;col info&quot;&gt;'+ size  +'&lt;/div&gt;');
+                
+                return output.join('');
+            }
+        })
+    },
+    dockedItems: [{
+        xtype: 'toolbar',
+        dock: 'top',
+        items: ['-&gt;',{
+            xtype: 'tbtext',
+            itemId: 'files-count',
+            cls: 'files-count'
+        }]
+    }],
+    
+    afterRender: function() {
+        this.callParent(arguments);
+        this.checkRemote();
+    },
+    
+    checkRemote: function() {
+        if (this.isRemote) {
+            this.el.addCls('mediaexplorer-remote');
+            this.el.removeCls('mediaexplorer-local');
+        }
+        else {
+            this.el.addCls('mediaexplorer-local');
+            this.el.removeCls('mediaexplorer-remote');
+        } 
+    }
+});</pre>
+</body>
+</html>

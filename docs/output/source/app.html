@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>The source code</title>
+  <link href="../resources/prettify/prettify.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="../resources/prettify/prettify.js"></script>
+  <style type="text/css">
+    .highlight { display: block; background-color: #ddd; }
+  </style>
+  <script type="text/javascript">
+    function highlight() {
+      document.getElementById(location.hash.replace(/#/, "")).className = "highlight";
+    }
+  </script>
+</head>
+<body onload="prettyPrint(); highlight();">
+  <pre class="prettyprint lang-js"><span id='VP-Application'>/**
+</span> * @class VP.Application
+ * @singleton
+ * Starts up the application, defining the namespace, loading up the baseUrl from the 
+ * parent page, and creating the {@link VP.view.Viewport}
+ */
+Ext.data.PostMessage.request({
+    key     : 'extension-baseurl',
+    success : function(baseUrl) {
+        
+        debugger;
+        
+        //&lt;debug&gt;
+        Ext.Loader.setConfig({
+            enabled: true,
+            paths: {
+                'Ext.data.proxy.PostMessage': baseUrl + 'lib/ext/data/proxy/PostMessage.js'
+            }
+        });
+    
+        Ext.require([
+            'Ext.data.proxy.PostMessage'
+        ]);
+        //&lt;/debug&gt;
+    
+        Ext.application({
+            name: 'VP',
+            appFolder: baseUrl + 'app',
+        
+            controllers: [
+                'MediaExplorer',
+                'MediaServers'
+            ],
+    
+            launch:function() {
+                Ext.create('VP.view.Viewport');
+            }
+        });
+    }
+});</pre>
+</body>
+</html>

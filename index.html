@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html manifest="" lang="en-US">
+<head>
+    <meta charset="UTF-8">
+	<title>Video Player</title>
+	<link rel="stylesheet" type="text/css" href="resources/css/index.css" />
+	<script type="text/javascript" src="lib/ChromeProxy.js"></script>
+	<script type="text/javascript" src="lib/jquery.js"></script>
+	<script type="text/javascript" src="lib/Upnp.js"></script>
+	<script type="text/javascript" src="lib/soapclient.js"></script>
+	<script type="text/javascript" src="lib/filer.js"></script>
+	<script type="text/javascript" src="index.js"></script>
+</head>
+<body>
+	<iframe id="sandbox-frame" class="sandboxed" sandbox="allow-scripts"></iframe>
+	<div id="player-ct">
+		<div class="toolbar">
+			<button id="close-player-btn">Close</button>
+			<button id="save-player-btn">Import to local</button>
+		</div>
+		<div id="video-body">
+			<video controls></video>
+		</div>
+		<div id="audio-body">
+			<audio controls></audio>
+		</div>
+	</div>
+</body>
+</html>

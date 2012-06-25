@@ -1,0 +1,17 @@
+[
+    {
+        "title": "App Guide",
+        "items": [
+            {
+                "name": "media_player_overview",
+                "title": "Media Player Overview",
+                "description": "A walkthrough video for the Sencha Media Player for Chrome Platform"
+            },
+            {
+                "name": "getting_started",
+                "title": "Getting Started",
+                "description": "This introduction explains how to use Ext JS 4 with the new Google Chrome Platform"
+            }        
+        ]
+    }
+]

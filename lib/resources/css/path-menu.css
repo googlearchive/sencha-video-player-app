@@ -1,0 +1,123 @@
+@import url(http://fonts.googleapis.com/css?family=Dosis:600);
+/* line 6, ../sass/path-menu.scss */
+.x-pathmenu {
+  width: 300px;
+  height: 300px;
+  background: #DDD;
+}
+
+/* line 12, ../sass/path-menu.scss */
+.x-path-btn, .x-path-item {
+  position: absolute;
+  overflow: visible;
+  -webkit-box-shadow: 0 0 0 3px white, 0 0 0 4px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 0 3px white, 0 0 0 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 0 3px white, 0 0 0 4px rgba(0, 0, 0, 0.3);
+}
+/* line 16, ../sass/path-menu.scss */
+.x-path-btn:before, .x-path-btn:after, .x-path-item:before, .x-path-item:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+/* line 22, ../sass/path-menu.scss */
+.x-path-btn:before, .x-path-item:before {
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+/* line 26, ../sass/path-menu.scss */
+.x-path-btn.x-button-pressing:after, .x-path-item.x-button-pressing:after {
+  background: #000;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+}
+
+/* line 33, ../sass/path-menu.scss */
+.x-path-btn {
+  width: 34px;
+  height: 34px;
+  bottom: 4px;
+  left: 4px;
+  -webkit-border-radius: 34px;
+  -moz-border-radius: 34px;
+  -ms-border-radius: 34px;
+  -o-border-radius: 34px;
+  border-radius: 34px;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e85839), color-stop(49%, #e24428), color-stop(51%, #dd3018), color-stop(100%, #cb2c16));
+  background-image: -webkit-linear-gradient(#e85839, #e24428 49%, #dd3018 51%, #cb2c16);
+  background-image: -moz-linear-gradient(#e85839, #e24428 49%, #dd3018 51%, #cb2c16);
+  background-image: -o-linear-gradient(#e85839, #e24428 49%, #dd3018 51%, #cb2c16);
+  background-image: -ms-linear-gradient(#e85839, #e24428 49%, #dd3018 51%, #cb2c16);
+  background-image: linear-gradient(#e85839, #e24428 49%, #dd3018 51%, #cb2c16);
+}
+/* line 40, ../sass/path-menu.scss */
+.x-path-btn:before, .x-path-btn:after {
+  width: 42px;
+  height: 42px;
+  margin-top: -21px;
+  margin-left: -21px;
+  -webkit-border-radius: 42px;
+  -moz-border-radius: 42px;
+  -ms-border-radius: 42px;
+  -o-border-radius: 42px;
+  border-radius: 42px;
+}
+/* line 48, ../sass/path-menu.scss */
+.x-path-btn.x-button-pressed .x-button-label {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/* line 52, ../sass/path-menu.scss */
+.x-path-btn .x-button-label {
+  font-family: Dosis, sans-serif;
+  font-weight: 600;
+  line-height: 22px;
+  font-size: 49px;
+  height: 100%;
+  width: 100%;
+  color: #FFF;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+/* line 64, ../sass/path-menu.scss */
+.x-path-item {
+  width: 26px;
+  height: 26px;
+  bottom: 8px;
+  left: 8px;
+  background: #44403d;
+  -webkit-border-radius: 26px;
+  -moz-border-radius: 26px;
+  -ms-border-radius: 26px;
+  -o-border-radius: 26px;
+  border-radius: 26px;
+}
+/* line 71, ../sass/path-menu.scss */
+.x-path-item:before, .x-path-item:after {
+  width: 30px;
+  height: 30px;
+  margin-top: -15px;
+  margin-left: -15px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+  border-radius: 30px;
+}
+/* line 78, ../sass/path-menu.scss */
+.x-path-item .x-button-icon {
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+}

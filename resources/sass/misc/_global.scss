@@ -1,0 +1,19 @@
+body {
+    background: #556170 url(../images/dark-blue-pattern.png);
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
+.x-btn {
+    @include box-shadow(0 1px #4e627c, 0 1px rgba(#FFF, 0.3) inset);
+    .x-btn-inner {
+        @include text-shadow(0 -1px 1px #FFF);
+    }
+    &.x-disabled {
+        @include opacity(0.6);
+    }
+}
+
+.x-toolbar-default {
+    padding: 5px 20px;
+}

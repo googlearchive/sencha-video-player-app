@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>The source code</title>
+  <link href="../resources/prettify/prettify.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="../resources/prettify/prettify.js"></script>
+  <style type="text/css">
+    .highlight { display: block; background-color: #ddd; }
+  </style>
+  <script type="text/javascript">
+    function highlight() {
+      document.getElementById(location.hash.replace(/#/, "")).className = "highlight";
+    }
+  </script>
+</head>
+<body onload="prettyPrint(); highlight();">
+  <pre class="prettyprint lang-js"><span id='VP-view-media-ServersTree'>/**
+</span> * Displays the lateral treepanel navigation, with servers, folders and files.
+ */
+Ext.define('VP.view.media.ServersTree',{
+    extend: 'Ext.tree.Panel',
+    xtype: 'mediaserverstree',
+    cls: 'vp-mediaserverstree',
+    displayField: 'name',
+    border: false,
+    rootVisible: false,
+    hideHeaders: true,
+    singleExpand: true,
+    width: 200,
+    
+    initComponent: function() {
+        this.store = Ext.create('VP.store.MediaItems', {
+            root: {
+                children: [{
+                    name: 'MEDIA SERVERS',
+                    cls: 'server-node',
+                    type: 'media_servers',
+                    leaf: true
+                },{
+                    name: 'Local',
+                    cls: 'server-node',
+                    type: 'local',
+                    expanded: true,
+                    isRemote: false,
+                    children: [{
+                        id: '/audio',
+                        url: '/audio',
+                        serverId: 'local',
+                        name: 'Audio',
+                        isRemote: false
+                    },{
+                        id: '/video',
+                        url: '/video',
+                        serverId: 'local',
+                        name: 'Video',
+                        isRemote: false
+                    }]
+                }]
+            }
+        });
+
+        this.callParent(arguments);
+    }
+});</pre>
+</body>
+</html>

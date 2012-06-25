@@ -1,0 +1,1 @@
+jsduck ../app/ ../app.js  --output ../docs/output/ --guides ../docs/guides.json --title "Sencha Player for Chrome"

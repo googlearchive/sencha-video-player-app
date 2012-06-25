@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>The source code</title>
+  <link href="../resources/prettify/prettify.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="../resources/prettify/prettify.js"></script>
+  <style type="text/css">
+    .highlight { display: block; background-color: #ddd; }
+  </style>
+  <script type="text/javascript">
+    function highlight() {
+      document.getElementById(location.hash.replace(/#/, "")).className = "highlight";
+    }
+  </script>
+</head>
+<body onload="prettyPrint(); highlight();">
+  <pre class="prettyprint lang-js"><span id='VP-store-MediaItems'>/**
+</span> * This is the store used on the lateral treepanel navigation.
+ * It uses the {@link VP.model.MediaItem} model, and it fetches 
+ * the data from the parent page using a HTML5 PostMessage Proxy.
+ */
+Ext.define('VP.store.MediaItems',{
+    extend: 'Ext.data.TreeStore',
+    model: 'VP.model.MediaItem',
+    nodeParam: 'nodeId',
+    proxy: {
+        type: 'postmessage',
+        key: 'upnp-browse'
+    },
+    
+<span id='VP-store-MediaItems-method-load'>    /**
+</span>     * Overrides the normal load method to pass the whole node
+     * object to the proxy, other than just the string nodeID* 
+     */
+    load: function(options) {
+        options = options || {};
+        options.params = options.params || {};
+
+        var node = options.node || this.tree.getRootNode();
+            
+        options.params.node = node.data;
+        this.callParent([options]);
+    }
+});</pre>
+</body>
+</html>

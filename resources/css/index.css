@@ -1,0 +1,195 @@
+/* line 17, ../../../../../.rvm/gems/ruby-1.9.2-p290@global/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* line 20, ../../../../../.rvm/gems/ruby-1.9.2-p290@global/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+body {
+  line-height: 1;
+}
+
+/* line 22, ../../../../../.rvm/gems/ruby-1.9.2-p290@global/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 24, ../../../../../.rvm/gems/ruby-1.9.2-p290@global/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 26, ../../../../../.rvm/gems/ruby-1.9.2-p290@global/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 28, ../../../../../.rvm/gems/ruby-1.9.2-p290@global/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 101, ../../../../../.rvm/gems/ruby-1.9.2-p290@global/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 30, ../../../../../.rvm/gems/ruby-1.9.2-p290@global/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 114, ../../../../../.rvm/gems/ruby-1.9.2-p290@global/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 4, ../sass/index.scss */
+html, body {
+  overflow: hidden;
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica-Neue, Helvetica, "BBAlpha Sans", sans-serif;
+}
+
+/* line 8, ../sass/index.scss */
+iframe {
+  background: #FFF;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/* line 14, ../sass/index.scss */
+#player-ct {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  background: #333;
+  -webkit-transition: all 1s;
+  -webkit-transform: translateY(100%);
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: box;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -ms-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-box-align: stretch;
+  -moz-box-align: stretch;
+  -ms-box-align: stretch;
+  box-align: stretch;
+}
+/* line 28, ../sass/index.scss */
+#player-ct .toolbar {
+  height: auto;
+  padding: 5px 10px;
+  border-bottom: 1px solid #000;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #333333), color-stop(100%, #222222));
+  background-image: -webkit-linear-gradient(#333333, #222222);
+  background-image: -moz-linear-gradient(#333333, #222222);
+  background-image: -o-linear-gradient(#333333, #222222);
+  background-image: -ms-linear-gradient(#333333, #222222);
+  background-image: linear-gradient(#333333, #222222);
+}
+/* line 35, ../sass/index.scss */
+#player-ct #video-body, #player-ct #audio-body {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -ms-box-flex: 1;
+  box-flex: 1;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -ms-box-orient: vertical;
+  box-orient: vertical;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: box;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-box-align: center;
+  box-align: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-box-pack: center;
+  box-pack: center;
+}
+/* line 42, ../sass/index.scss */
+#player-ct video, #player-ct audio {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -ms-box-flex: 1;
+  box-flex: 1;
+  min-width: 100%;
+}
+
+/* line 48, ../sass/index.scss */
+#close-player-btn, #save-player-btn {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  border: 1px solid #31435B;
+  color: #FFF;
+  padding: 7px 10px;
+  font-size: 13px;
+  font-weight: bold;
+  position: relative;
+}
+/* line 56, ../sass/index.scss */
+#close-player-btn:hover:before, #close-player-btn:active:before, #save-player-btn:hover:before, #save-player-btn:active:before {
+  content: "";
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+}
+/* line 65, ../sass/index.scss */
+#close-player-btn:active:before, #save-player-btn:active:before {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* line 69, ../sass/index.scss */
+#close-player-btn {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #839bbc), color-stop(3%, #6280aa), color-stop(100%, #4c678c));
+  background-image: -webkit-linear-gradient(top, #839bbc, #6280aa 3%, #4c678c);
+  background-image: -moz-linear-gradient(top, #839bbc, #6280aa 3%, #4c678c);
+  background-image: -o-linear-gradient(top, #839bbc, #6280aa 3%, #4c678c);
+  background-image: -ms-linear-gradient(top, #839bbc, #6280aa 3%, #4c678c);
+  background-image: linear-gradient(top, #839bbc, #6280aa 3%, #4c678c);
+}
+
+/* line 72, ../sass/index.scss */
+#save-player-btn {
+  display: none;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #839bbc), color-stop(3%, #6280aa), color-stop(100%, #4c678c));
+  background-image: -webkit-linear-gradient(top, #839bbc, #6280aa 3%, #4c678c);
+  background-image: -moz-linear-gradient(top, #839bbc, #6280aa 3%, #4c678c);
+  background-image: -o-linear-gradient(top, #839bbc, #6280aa 3%, #4c678c);
+  background-image: -ms-linear-gradient(top, #839bbc, #6280aa 3%, #4c678c);
+  background-image: linear-gradient(top, #839bbc, #6280aa 3%, #4c678c);
+}

@@ -1,0 +1,122 @@
+.viewport-toolbar {
+    @include background-image(linear-gradient(#7998c1, #526783));
+    border-top: 1px solid #88a4c8;
+    border-bottom: 1px solid #2e3e4f;
+    padding: 6px 18px;
+    .sencha-logo {
+        text-indent: -10000px;
+        width: 15px;
+        height: 23px;
+        margin-right: 180px;
+        background: transparent url(../images/logo-sencha.png) no-repeat center center;
+    }
+    .messages-ct {
+        color: #FFF;
+        font-weight: bold;
+        height: 26px;
+        line-height: 26px;
+        @include text-shadow(0 -1px 1px #004680);
+        
+        .progress-msg, .progress-bar {
+            display: inline-block;
+        }
+        .progress-bar {
+            width: 140px;
+            margin-left: 20px;
+            background: rgba(#FFF, .25);
+            overflow: hidden;
+            @include box-shadow(0 -1px #004680);
+            &, span {
+                height: 8px;
+                @include border-radius(8px);
+            }
+            span {
+                width: 0%;
+                background: #FFF;
+                display: block;
+                @include transition(width 1s);
+            }
+        }
+        .completed-icon {
+            display: inline-block;
+            background: #70ea4e url(../images/checkmark.png) no-repeat center center;
+            background-size: 8px;
+            width: 9px;
+            height: 9px;
+            border: 1px solid #FFF;
+            margin-left: 5px;
+            @include border-radius(9px);
+        }
+    }
+    .x-btn {
+        margin: 0 4px;
+    }
+}
+
+@include extjs-button-ui(
+    'action-small',
+    
+    $button-small-border-radius,
+    $button-small-border-width,    
+    
+    $button-default-border-color,
+    $button-default-border-color,
+    $button-default-border-color-focus,
+    $button-default-border-color-pressed,
+    $button-default-border-color-disabled,
+    
+    $button-small-padding,
+    $button-small-text-padding,
+
+    $button-default-background-color,
+    $button-default-background-color,
+    $button-default-background-color-focus,
+    $button-default-background-color-pressed,
+    $button-default-background-color-disabled,
+    
+    color-stops(#7998c1, #536985),
+    color-stops(darken(#7998c1, 5%), darken(#536985, 5%)),
+    $button-default-background-gradient-focus,
+    $button-default-background-gradient-pressed,
+    color-stops(#7998c1, #536985),
+
+    #FFF,
+    #FFF,
+    $button-default-color-focus,
+    $button-default-color-pressed,
+    #FFF,
+            
+    $button-small-font-size,
+    $button-small-font-size,
+    $button-small-font-size-focus,
+    $button-small-font-size-pressed,
+    $button-small-font-size,
+    
+    $button-small-font-weight,
+    $button-small-font-weight,
+    $button-small-font-weight-focus,
+    $button-small-font-weight-pressed,
+    $button-small-font-weight,
+    
+    $button-small-font-family,
+    $button-small-font-family,
+    $button-small-font-family-focus,
+    $button-small-font-family-pressed,
+    $button-small-font-family,
+    
+    9px
+);
+
+.x-btn-action-small {
+    button {
+        height: 16px;
+    }
+    .x-btn-inner {
+        height: 16px;
+        line-height: 16px;
+        @include text-shadow(0 -1px 1px #384659);
+    }
+    .x-btn-icon {
+        margin-top: 3px;
+    }
+}
