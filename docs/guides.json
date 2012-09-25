@@ -3,15 +3,30 @@
         "title": "App Guide",
         "items": [
             {
+                "name": "getting_started",
+                "title": "Getting Started",
+                "description": "This introduction explains how to use Ext JS 4 with the new Google Chrome Platform"
+            },
+            {
                 "name": "media_player_overview",
                 "title": "Media Player Overview",
                 "description": "A walkthrough video for the Sencha Media Player for Chrome Platform"
             },
             {
-                "name": "getting_started",
-                "title": "Getting Started",
-                "description": "This introduction explains how to use Ext JS 4 with the new Google Chrome Platform"
-            }        
+                "name": "media_discovery",
+                "title": "Media Discovery",
+                "description": "Quick guide on Media Discovery feature"
+            },
+            {
+                "name": "browse_stored_data",
+                "title": "Browse server for media assets",
+                "description": "Quick guide on Media Browse feature and related ExtJs components"
+            },
+            {
+                "name": "take_assets_offline",
+                "title": "Take media assets offline",
+                "description": "Quick guide on requirements and workflow for saving assets locally"
+            }
         ]
     }
 ]

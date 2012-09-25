@@ -123,7 +123,7 @@ Ext.define('VP.controller.MediaExplorer', {
         var me              = this,
             viewportCenter  = me.getViewportCenter(),
             mediaExplorer   = me.getMediaExplorer();
-        debugger;
+        //debugger;
         //if it does not exists, add the media explorer
         if (!mediaExplorer) {
             viewportCenter.removeAll();

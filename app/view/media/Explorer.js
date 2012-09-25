@@ -19,7 +19,7 @@ Ext.define('VP.view.media.Explorer',{
                     type            = values.type,
                     i               = values.url.lastIndexOf('.'),
                     extension       = i != -1 ? values.url.substring(i+1) : '',
-                    duration        = metaData.duration||'-';
+                    duration        = metaData.duration||'-',
                     size            = metaData.size ? Ext.util.Format.fileSize(metaData.size) : '-';
 
                 //download icon    

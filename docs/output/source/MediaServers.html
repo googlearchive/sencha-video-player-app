@@ -23,27 +23,27 @@
 Ext.define('VP.controller.MediaServers', {
     extend: 'Ext.app.Controller',
     
-    stores: [
-        'MediaItems'
+<span id='VP-controller-MediaServers-property-stores'>    stores: [
+</span>        'MediaItems'
     ],
-    models: [
-        'MediaItem'
+<span id='VP-controller-MediaServers-property-models'>    models: [
+</span>        'MediaItem'
     ],
-    views: [
-        'Viewport',
+<span id='VP-controller-MediaServers-property-views'>    views: [
+</span>        'Viewport',
         'media.ServersGraph',
         'media.ServersTree'
     ],
-    refs: [
-        {ref: 'viewportCenter',     selector: 'viewport &gt; #viewport-center'     },
+<span id='VP-controller-MediaServers-property-refs'>    refs: [
+</span>        {ref: 'viewportCenter',     selector: 'viewport &gt; #viewport-center'     },
         {ref: 'messagesCt',         selector: 'viewport &gt; #viewport-toolbar &gt; #messages-ct'},
         {ref: 'serversTree',        selector: 'mediaserverstree'                },
         {ref: 'mediaExplorer',      selector: 'mediaexplorer'                   }
         
     ],
     
-    //@private
-    init: function() {
+<span id='VP-controller-MediaServers-method-init'>    //@private
+</span>    init: function() {
         var me = this;
         
         me.control({
@@ -195,6 +195,7 @@ Ext.define('VP.controller.MediaServers', {
                 // items.push({itemId: 2, text: 'Server 2' });
                 // items.push({itemId: 3, text: 'Server 3' });
                 // items.push({itemId: 4, text: 'Server 4' });
+                //modify according to your local network
                 items.push({
                     itemId: 1, 
                     text: 'My PC',

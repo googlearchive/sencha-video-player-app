@@ -8,7 +8,7 @@ Ext.data.PostMessage.request({
     key     : 'extension-baseurl',
     success : function(baseUrl) {
         
-        debugger;
+        //debugger;
         
         //<debug>
         Ext.Loader.setConfig({

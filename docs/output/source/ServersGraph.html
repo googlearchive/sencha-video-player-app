@@ -22,10 +22,10 @@
 Ext.define('VP.view.media.ServersGraph',{
     extend: 'Ext.Container',
     xtype: 'mediaserversgraph',
-    cls: 'vp-mediaserversgraph',
-    autoScroll: true,
-    items: {
-        xtype: 'container',
+<span id='VP-view-media-ServersGraph-property-cls'>    cls: 'vp-mediaserversgraph',
+</span><span id='VP-view-media-ServersGraph-property-autoScroll'>    autoScroll: true,
+</span><span id='VP-view-media-ServersGraph-property-items'>    items: {
+</span>        xtype: 'container',
         itemId: 'body',
         cls: 'container-body',
         defaultType: 'button',
@@ -44,8 +44,8 @@ Ext.define('VP.view.media.ServersGraph',{
         this.getComponent('body').items.each(this.fanOutItem, this);
     },
     
-    //@private
-    fanOutItem: function(item, index, len) {
+<span id='VP-view-media-ServersGraph-method-fanOutItem'>    //@private
+</span>    fanOutItem: function(item, index, len) {
         var angle, rad, sin, cos, x, y, style, difCenter,
             arc             = 180,
             distance        = 260;

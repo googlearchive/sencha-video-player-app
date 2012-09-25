@@ -22,14 +22,14 @@
 Ext.define('VP.controller.MediaExplorer', {
     extend: 'Ext.app.Controller',
     
-    stores: [
-        'MediaExplorer'
+<span id='VP-controller-MediaExplorer-property-stores'>    stores: [
+</span>        'MediaExplorer'
     ],
-    views: [
-        'media.Explorer'
+<span id='VP-controller-MediaExplorer-property-views'>    views: [
+</span>        'media.Explorer'
     ],
-    refs: [
-        {ref: 'viewportCenter',     selector: 'viewport &gt; #viewport-center'     },
+<span id='VP-controller-MediaExplorer-property-refs'>    refs: [
+</span>        {ref: 'viewportCenter',     selector: 'viewport &gt; #viewport-center'     },
         {ref: 'messagesCt',         selector: 'viewport &gt; #viewport-toolbar &gt; #messages-ct' },
         {ref: 'downloadBtn',        selector: 'viewport &gt; #viewport-toolbar &gt; #download-btn'},
         {ref: 'cancelBtn',          selector: 'viewport &gt; #viewport-toolbar &gt; #cancel-download-btn'},
@@ -38,8 +38,8 @@ Ext.define('VP.controller.MediaExplorer', {
         {ref: 'explorerToolbar',    selector: 'mediaexplorer &gt; toolbar'         }
     ],
     
-    //@private
-    init: function() {
+<span id='VP-controller-MediaExplorer-method-init'>    //@private
+</span>    init: function() {
         var me = this;
         
         me.control({
@@ -140,7 +140,7 @@ Ext.define('VP.controller.MediaExplorer', {
         var me              = this,
             viewportCenter  = me.getViewportCenter(),
             mediaExplorer   = me.getMediaExplorer();
-        debugger;
+        //debugger;
         //if it does not exists, add the media explorer
         if (!mediaExplorer) {
             viewportCenter.removeAll();

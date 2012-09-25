@@ -1,12 +1,14 @@
 {
     "name": "Video Player",
     "description": "Features network media discovery and playlist management",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "manifest_version": 2,
     "offline_enabled": true,
     "app": {
         "background": {
-            "scripts": ["background.js"]
+            "scripts": [
+                "background.js"
+            ]
         }
     },
     "icons": {
@@ -16,22 +18,31 @@
     },
     "intents": {
         "http://webintents.org/view": [
-          { 
-             "title": "Watch in Video player",
-             "type": ["video/ogg", "video/mpeg", "video/mp4", "video/webm", "video/quicktime"]
-          }
+            {
+                "title": "Watch in Video player",
+                "type": ["video/ogg", "video/mpeg", "video/mp4", "video/webm", "video/quicktime"]
+            }
         ],
         "http://webintents.org/save" : [
-          { 
-             "title": "Save to Video player",
-             "type": ["video/ogg", "video/mpeg", "video/mp4", "video/webm", "video/quicktime"]
-          }
+            {
+                "title": "Save to Video player",
+                "type": ["video/ogg", "video/mpeg", "video/mp4", "video/webm", "video/quicktime"]
+            }
         ]
+    },
+    "sandbox": {
+        "pages": ["sandbox.html"]
     },
     "permissions": [
         "experimental",
         "http://*/*",
         "unlimitedStorage",
-        "appWindow"
+        {
+            "socket": [
+                "tcp-connect",
+                "udp-send-to",
+                "udp-bind"
+            ]
+        }
     ]
 }

@@ -178,6 +178,7 @@ Ext.define('VP.controller.MediaServers', {
                 // items.push({itemId: 2, text: 'Server 2' });
                 // items.push({itemId: 3, text: 'Server 3' });
                 // items.push({itemId: 4, text: 'Server 4' });
+                //modify according to your local network
                 items.push({
                     itemId: 1, 
                     text: 'My PC',

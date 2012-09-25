@@ -8,9 +8,11 @@ Chrome Platform Apps are native applications written in HTML5, JavaScript and CS
 
 This tutorial assumes you have the Chrome Platform Apps already enabled and ready to use.
 
-### 1.3. Ext JS 4 SDK
+To read more on getting started we recommend you to visit [Google Chrome Apps developer site](http://developer.chrome.com/trunk/apps/about_apps.html)
 
-Download [Ext JS 4 SDK][sdk-download]. Unzip the package to a new directory called "sdk" within your application root directory.  
+### 1.2. Ext JS 4 SDK
+
+Download [Ext JS 4 SDK][sdk-download]. Unzip the package to a new directory called "sdk" within your application root directory.
 
 ## 2. Application Structure
 
@@ -35,9 +37,10 @@ The following is the recommended directory structure for an Ext JS application:
 		- background.js
 		- index.js
 		- manifest.json
+		- sandbox.html
 
 - `appname` is a directory that contains all your application's source files
-- `app` contains all your classes, the naming style of which should follow the convention listed in the [Class System](#http://docs.sencha.com/ext-js/4-1/#!/guide/class_system) guide
+- `app` contains all your classes, the naming style of which should follow the convention listed in the [Class System](http://docs.sencha.com/ext-js/4-1/#!/guide/class_system) guide
 - `sdk` contains the Ext JS 4 SDK files
 - `resources` contains additional CSS and image files which are responsible for the look and feel of the application, as well as other static resources (XML, JSON, etc.)
 - `index.html` is the entry-point HTML document
@@ -45,11 +48,15 @@ The following is the recommended directory structure for an Ext JS application:
 - `background.js` called by Chrome Platform to start your application
 - `index.js` creates the sandbox iframe for Ext JS to run (read more below)
 - `manifest.json` describe your application as part of Chrome Platform
+- `sandbox.html` sandboxed iframe entry point of your application
 
 ### 2.2 Content Security Policy
 
-Chrome Platform Apps run in a controlled environment that enforces compliance with Content Security Policy. Since Ext JS need some higher privileges to execute, the solution found is to
-create an iframe that acts as a sandbox environment. This iframe has no access to native APIs, so we have the following architecture:
+Chrome Platform Apps run in a controlled environment that enforces compliance with Content Security Policy.
+Developer should be aware, that there are some functions and methods either disabled, or not available. To name a few : alert(), localStorage and Flash.
+Here is the full list of [Disabled Web Features](http://developer.chrome.com/trunk/apps/app_deprecated.html)
+
+Since Ext JS need some higher privileges to execute, the solution found is to create an iframe that acts as a sandbox environment. This iframe has no access to native APIs, so we have the following architecture:
 
 - `index.js` is the Chrome Platform app entry point. It creates the iframe which contains the Ext application and has access to native APIs.
 - `app.js` is the Ext JS app entry point. It can execute all the Ext code and render the views, but has no access to native APIs.
@@ -59,24 +66,31 @@ HTML5 Post Message API.
 
 ### 2.3 Chrome App entry point 
 
-First of all you need to setup the manifest.json and background.js. This will allow us to add your app as a Chrome Extension. For how to
-create a Chrome Platform app [check this guide](http://code.google.com/chrome/extensions/getstarted.html).
+First of all you need to setup the manifest.json and background.js. These two files are mandatory for chrome applications.
+If you would rather create just an extension, please have a look at the documentation provided on [Getting started with chrome extensions](http://developer.chrome.com/extensions/).
 
 In your index.html, define the sandbox iframe as follow:
 
-	<iframe id="sandbox-frame" class="sandboxed" sandbox="allow-scripts"></iframe>
-	
-And on index.js, we need to inject the Ext JS app start in the iframe:
+	<iframe id="sandbox-frame" class="sandboxed" sandbox="allow-scripts" src="sandbox.html"></iframe>
+
+Iframe points to sandbox.html file where we set up files requred for your ExtJs application and frame communication.
+Sample file would contain:
+
+    <!DOCTYPE HTML>
+    <html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="resources/css/app.css" />'
+        <script src="sdk/ext-all-dev.js"></script>'
+        <script src="lib/ext/data/PostMessage.js"></script>'
+        <script src="lib/ChromeProxy.js"></script>'
+        <script src="app.js"></script>
+    </head>
+    <body></body>
+    </html>
+
+And on index.js, we get reference to this iframe for communication between frames:
 
 	var iframe = document.getElementById('sandbox-frame');
-	iframe.src = [
-	    'data:text/html,',
-	    '<link rel="stylesheet" type="text/css" href="', extension.getURL('resources/css/app.css'), '" />',
-	    '<scr','ipt src="', extension.getURL('sdk/ext-all-dev.js'          ), '"></script>',
-	    '<scr','ipt src="', extension.getURL('lib/ext/data/PostMessage.js' ), '"></script>',
-	    '<scr','ipt src="', extension.getURL('lib/ChromeProxy.js'          ), '"></script>',
-	    '<scr','ipt src="', extension.getURL('app.js'                      ), '"></script>'	    
-	].join('');
 
 	iframeWindow = iframe.contentWindow;
 
@@ -138,6 +152,6 @@ This will send a message to the parent page with the key 'extension-baseurl'. Th
 	    iframeWindow.postMessage(data, '*');
 	}
 	
-At the example above the Ext app requests the base chrome URL. The parent page receives the request, assigns the result, and sends back.
+At the example above the Ext app requests the base chrome URL. The parent page receives the request, assigns the result, and sends the data back.
 
 [sdk-download]: http://www.sencha.com/products/extjs/
